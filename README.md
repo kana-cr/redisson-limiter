@@ -4,10 +4,11 @@
 
 二、limiter配置
 开启流控
+```
 limiter:
   enabled: true  （默认的是关闭的）
   
-配置Redis地址供限流器读取
+//配置Redis地址供限流器读取
 spring.redis.host=
 spring.redis.password=
 spring.redis.database=0
@@ -17,7 +18,7 @@ spring.redis.pool.min-idle=0
 spring.redis.pool.max-idle=8
 spring.redis.pool.max-wait=3s
 spring.redis.pool.max-active=8
-
+```
 对需要的方法加上注解
 
 ```@RestController
