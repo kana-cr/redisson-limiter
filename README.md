@@ -19,7 +19,8 @@ spring.redis.pool.max-wait=3s
 spring.redis.pool.max-active=8
 
 对需要的方法加上注解
-@RestController
+
+```@RestController
 public class RootController {
 
     @GetMapping("/ok")
@@ -31,6 +32,8 @@ public class RootController {
 }
 
 //回调的方法类和方法（回调的方法必须入参和返回值相同）
+
+```
 @Component
 public class Fallbackbean {
 
@@ -41,7 +44,9 @@ public class Fallbackbean {
 
 三、参数介绍
 注解参数含义
-package com.shuwen.mid.limiter.annotation;
+
+```
+package limiter.annotation;
 
 import org.redisson.api.RateIntervalUnit;
 import org.redisson.api.RateType;
@@ -122,6 +127,7 @@ public @interface Limiter {
     Class<?>[] fallbackClass() default {};
     
 }
+```
 
 四：后期规划
 实现启动时回调方法和回调类自检
